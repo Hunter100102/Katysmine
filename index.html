@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Love for Katy</title>
+    <style>
+        body {
+            font-family: cursive;
+            margin: 0;
+            padding: 0;
+            background-image: url('romance.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 100px 20px 20px; /* Added padding-top: 100px */
+            text-align: center;
+            color: #000; /* Changed text color to black */
+        }
+
+        h1, p {
+            margin-bottom: 10px;
+        }
+
+        /* Popup box styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Button styles */
+        .popup-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff4081;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Love for Katy</h1>
+        <i>I can not wait to marry you my lil lady!!!!!!!</i>
+        <p>I adore Katy with all my heart. She brings joy and happiness into my life every single day, and I just want the world to know!</p>
+    </div>
+
+    <!-- Popup box -->
+    <div id="popup" class="popup">
+        <p>I hope your day goes well, my queen!</p>
+        <audio id="audio" controls autoplay>
+            <source src="mi_amore.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script>
+        // Function to open the popup after 3 seconds
+        setTimeout(function() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "block";
+        }, 1500);
+
+        // Function to play the audio when the page loads
+        window.onload = function() {
+            var audio = document.getElementById("audio");
+            audio.play();
+        };
+    </script>
+</body>
+</html>
