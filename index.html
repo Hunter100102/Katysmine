@@ -9,46 +9,74 @@
             font-family: cursive;
             margin: 0;
             padding: 0;
-            background-image: url('romance.jpg');
+            background-image: url('Photos/romance.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
         }
 
         .container {
             width: 80%;
             margin: auto;
-            padding: 100px 20px 20px; /* Added padding-top: 100px */
+            padding: 100px 20px 20px;
             text-align: center;
-            color: #000; /* Changed text color to black */
+            color: #000;
         }
 
         h1, p {
             margin-bottom: 10px;
         }
 
-        /* Popup box styles */
-        .popup {
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        /* Hide the images by default */
+        .mySlides {
             display: none;
-            position: fixed;
-            top: 50%;
+        }
+
+        /* Question box styles */
+        .question-box {
+            position: absolute;
+            top: 10px;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateX(-50%);
             background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
         }
 
-        /* Button styles */
-        .popup-btn {
-            margin-top: 20px;
+        .question-box input {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .question-box button {
+            margin-top: 10px;
             padding: 10px 20px;
             background-color: #ff4081;
             color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+        }
+
+        .question-box p {
+            margin: 10px 0 0;
         }
     </style>
 </head>
@@ -57,29 +85,94 @@
         <h1>My Love for Katy</h1>
         <i>I can not wait to marry you my lil lady!!!!!!!</i>
         <p>I adore you with all my heart. You bring joy and happiness into my life every single day, and I just want the world to know!</p>
+
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="Photos/1.jpg" style="width:40%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="Photos/2.jpg" style="width:50%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="Photos/3.jpg" style="width:30%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="Photos/4.jpg" style="width:30%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="Photos/5.jpg" style="width:30%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="Photos/6.jpg" style="width:50%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="Photos/7.jpg" style="width:50%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="Photos/8.jpg" style="width:30%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="Photos/9.jpg" style="width:30%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="Photos/10.jpg" style="width:30%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="Photos/11.jpg" style="width:30%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="Photos/12.jpg" style="width:30%">
+            </div>
+        </div>
     </div>
 
-    <!-- Popup box -->
-    <div id="popup" class="popup">
-        <p>I hope your day goes well, my queen!</p>
-        <audio id="audio" controls autoplay>
-            <source src="mi_amore.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
+    <!-- Question box -->
+    <div class="question-box">
+        <p>Who's the most beautiful in the world?</p>
+        <input type="text" id="answer" placeholder="Type your answer here...">
+        <button onclick="checkAnswer()">Right?!</button>
+        <p id="response"></p>
     </div>
 
     <script>
-        // Function to open the popup after 3 seconds
-        setTimeout(function() {
-            var popup = document.getElementById("popup");
-            popup.style.display = "block";
-        }, 1500);
+        // Function to check the answer
+        function checkAnswer() {
+            var answer = document.getElementById('answer').value.toLowerCase();
+            var response = document.getElementById('response');
+            if (answer === 'katy') {
+                response.textContent = "You're a smart cookie!";
+            } else {
+                response.textContent = "Wrong, Katy!";
+            }
+        }
 
-        // Function to play the audio when the page loads
-        window.onload = function() {
-            var audio = document.getElementById("audio");
-            audio.play();
-        };
+        // Slideshow functionality
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
     </script>
 </body>
 </html>
