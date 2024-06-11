@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Mirror</title>
+    <style>
+        body {
+            font-family: cursive;
+            margin: 0;
+            padding: 0;
+            background-image: url('Photos/hearts.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #000;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 500px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            position: relative;
+        }
+
+        input {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #ff4081;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .home-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .home-button img {
+            width: 30px;
+            height: 30px;
+        }
+
+        p {
+            margin: 10px 0 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="home-button" onclick="window.location.href='index.html'">
+            <img src="Photos/home-heart.png" alt="Home">
+        </button>
+        <h1>Magic Mirror</h1>
+        <p>Who's the most beautiful in the world?</p>
+        <input type="text" id="answer" placeholder="Type your answer here...">
+        <button onclick="checkAnswer()">Right?!</button>
+        <p id="response"></p>
+    </div>
+
+    <script>
+        // Function to check the answer
+        function checkAnswer() {
+            var answer = document.getElementById('answer').value.toLowerCase();
+            var response = document.getElementById('response');
+            if (answer === 'katy') {
+                response.textContent = "You're a smart cookie!";
+            } else {
+                response.textContent = "Wrong, Katy!";
+            }
+        }
+    </script>
+</body>
+</html>

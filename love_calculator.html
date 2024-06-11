@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Match Calculator</title>
+    <style>
+        body {
+            font-family: cursive;
+            margin: 0;
+            padding: 0;
+            background-image: url('Photos/kisses.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #000;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 500px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            position: relative;
+        }
+
+        input {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #ff4081;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .home-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .home-button img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+
+        /* Popup styling */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1000;
+        }
+
+        .popup img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="home-button" onclick="window.location.href='index.html'">
+            <img src="Photos/home-heart.png" alt="Home">
+        </button>
+        <h1>Love Match Calculator</h1>
+        <input type="text" id="name1" placeholder="Your Name">
+        <input type="text" id="name2" placeholder="Your Partner's Name">
+        <button onclick="calculateLove()">Calculate Love</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <!-- Popup for naughty message -->
+    <div id="popup" class="popup">
+        <p>Naughty Naughty!</p>
+        <img src="Photos/bdsm.jpg" alt="Naughty Bunny" />
+    </div>
+
+    <script>
+        function calculateLove() {
+            var name1 = document.getElementById('name1').value.toLowerCase().trim();
+            var name2 = document.getElementById('name2').value.toLowerCase().trim();
+            var result = document.getElementById('result');
+
+            var validNames = [
+                'katy', 'katy nicole', 'katy nicole ford', 'katy ford',
+                'cody', 'cody hunter', 'william cody hunter', 'william hunter'
+            ];
+
+            if (name1 === 'master' && name2 === 'bunny') {
+                showNaughtyPopup();
+            } else if (name2 === 'master' && name1 === 'bunny') {
+                showNaughtyPopup();
+            } else {
+                if (name1 && name2) {
+                    if (
+                        (validNames.includes(name1) && validNames.includes(name2)) &&
+                        ((name1.includes('katy') || name1.includes('katy nicole') || name1.includes('katy ford') || name1.includes('katy nicole ford')) &&
+                         (name2.includes('cody') || name2.includes('cody hunter') || name2.includes('william cody hunter') || name2.includes('william hunter')) ||
+                         (name2.includes('katy') || name2.includes('katy nicole') || name2.includes('katy ford') || name2.includes('katy nicole ford')) &&
+                         (name1.includes('cody') || name1.includes('cody hunter') || name1.includes('william cody hunter') || name1.includes('william hunter')))
+                    ) {
+                        result.textContent = "That score is 100% they are soul mates!";
+                    } else if (
+                        (name1.includes('katy hunter') || name1.includes('katy nicole hunter')) &&
+                        (name2.includes('cody hunter') || name2.includes('william cody hunter') || name2.includes('cody')) ||
+                        (name2.includes('katy hunter') || name2.includes('katy nicole hunter')) &&
+                        (name1.includes('cody hunter') || name1.includes('william cody hunter') || name1.includes('cody'))
+                    ) {
+                        result.textContent = "Now you finally got it correct!";
+                    } else {
+                        var lovePercentage = Math.floor(Math.random() * 50) + 1;
+                        result.textContent = `Katy with who?! There is only a ${lovePercentage}% chance of that happening!`;
+                    }
+                } else {
+                    result.textContent = "Please enter both names.";
+                }
+            }
+        }
+
+        // Function to show naughty popup
+        function showNaughtyPopup() {
+            var popup = document.getElementById('popup');
+            popup.style.display = 'block';
+
+            // Hide popup after 5 seconds
+            setTimeout(function() {
+                popup.style.display = 'none';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

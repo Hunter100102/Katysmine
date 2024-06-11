@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Dearest Katy</title>
+    <title>I love you Katy!</title>
     <style>
         body {
             font-family: cursive;
@@ -11,6 +11,7 @@
             padding: 0;
             background-image: url('Photos/romance.jpg');
             background-size: cover;
+            background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
             display: flex;
@@ -25,6 +26,20 @@
             padding: 100px 20px 20px;
             text-align: center;
             color: #000;
+        }
+
+        nav {
+            background-color: rgba(255, 255, 255, 0.0); /* Adjusted to full transparency */
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: #000000;
+            text-decoration: none;
+            font-size: 18px;
         }
 
         h1, p {
@@ -42,47 +57,15 @@
         .mySlides {
             display: none;
         }
-
-        /* Question box styles */
-        .question-box {
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            text-align: center;
-        }
-
-        .question-box input {
-            margin-top: 10px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .question-box button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #ff4081;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .question-box p {
-            margin: 10px 0 0;
-        }
     </style>
 </head>
 <body>
+    <nav>
+        <a href="magic_mirror.html">Check the Magic Mirror</a>
+        <a href="love_calculator.html">Love Match Calculator</a>
+    </nav>
     <div class="container">
-        <h1>My Love for Katy</h1>
+        <h1>For My Dearest Katy</h1>
         <i>I can not wait to marry you my lil lady!!!!!!!</i>
         <p>I adore you with all my heart. You bring joy and happiness into my life every single day, and I just want the world to know!</p>
 
@@ -138,26 +121,7 @@
         </div>
     </div>
 
-    <!-- Question box -->
-    <div class="question-box">
-        <p>Who's the most beautiful in the world?</p>
-        <input type="text" id="answer" placeholder="Type your answer here...">
-        <button onclick="checkAnswer()">Right?!</button>
-        <p id="response"></p>
-    </div>
-
     <script>
-        // Function to check the answer
-        function checkAnswer() {
-            var answer = document.getElementById('answer').value.toLowerCase();
-            var response = document.getElementById('response');
-            if (answer === 'katy') {
-                response.textContent = "You're a smart cookie!";
-            } else {
-                response.textContent = "Wrong, Katy!";
-            }
-        }
-
         // Slideshow functionality
         var slideIndex = 0;
         showSlides();
