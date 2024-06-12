@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talk to Virtual Cody</title>
+    <style>
+        body {
+            font-family: cursive;
+            margin: 0;
+            padding: 0;
+            background-image: url('Photos/allyours.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 100px 20px 20px;
+            text-align: center;
+            color: #000;
+        }
+
+        nav {
+            background-color: rgba(255, 255, 255, 0.0); /* Adjusted to full transparency */
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: #000000;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        h1, p {
+            margin-bottom: 10px;
+        }
+        
+        /* Dialogflow iframe */
+        .dialogflow-iframe {
+            margin: auto;
+            width: 80%;
+            height: 430px; /* Adjust height as needed */
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="magic_mirror.html">Check the Magic Mirror</a>
+        <a href="love_calculator.html">Love Match Calculator</a>
+        <a href="index.html">Back to Home</a>
+    </nav>
+    <div class="container">
+        <h1>Talk to Mehhh!</h1>
+        <p>Chat with a Virtual Cody below:</p>
+
+        <!-- Dialogflow iframe -->
+        <iframe class="dialogflow-iframe" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/68eda0d9-62d9-4c1b-9106-b0f2f2600fa8"></iframe>
+    </div>
+</body>
+</html>
